@@ -19,7 +19,7 @@ jobs:
         uses: nanasess/setup-php@v4.0.2
         with:
           # Version Spec of the version to use.  Examples: 8.1
-          php-version: # optional, default is 8.3
+          php-version: 8.3
           # Optional scope for authenticating against scoped registries
           scope: # optional
 
