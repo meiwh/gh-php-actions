@@ -1,0 +1,30 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # 当推送到 main 分支时触发
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout 🛎️
+      uses: actions/checkout@v3
+
+    - name: Setup PHP
+      uses: php-actions/setup-php@v7
+      with:
+        php-version: '8.2.9'
+        # extensions: pdo, mbstring
+
+    - name: Build project 🏗️
+      run: |
+        php artisan GenerateDoc
+
+    - name: Deploy to GitHub Pages 🚀
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.ACCESS_TOKEN }}
+        publish_dir: ./docs # 替换为你要发布的目录路径
