@@ -27,7 +27,7 @@ jobs:
       - name: Build project 🏗️
         run: |
           php artisan GenerateDoc
-          ll -al ./docs
+          ls -al ./docs
 
       - name: Deploy to GitHub Pages 🚀
         uses: peaceiris/actions-gh-pages@v4
