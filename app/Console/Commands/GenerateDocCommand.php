@@ -18,7 +18,7 @@ class GenerateDocCommand extends Command
 
     public function handle()
     {
-        $archives = ArchiveModel::query()->limit(1)->get();
+        $archives = ArchiveModel::query()->orderBy('word')->get();
 
         $data = ['archives' => $archives];
         // 渲染视图并获取其内容
