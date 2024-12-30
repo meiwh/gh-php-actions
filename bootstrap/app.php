@@ -12,11 +12,8 @@ use Symfony\Component\HttpFoundation\Response;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
-    web: __DIR__ . '/../routes/web.php',
+        web: __DIR__ . '/../routes/web.php',
         health: '/up',
     )
-    ->withMiddleware(function (Middleware $middleware) {
-})
-    ->withExceptions(function (Exceptions $exceptions) {
-
-    })->create();
+    ->withMiddleware(function (Middleware $middleware) {})
+    ->withExceptions(function (Exceptions $exceptions) {})->create();
